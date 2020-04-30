@@ -93,7 +93,48 @@ solution:
 html sanitization
 
 
-code goole owasp java html sanitization
+ # code google owasp java html sanitization
+
+ # Bean Validation:
+
+    Fields
+    Properties
+    Classes
+@Constraints 
+
+    (@Pattern, @Digits, @Min, @Max, @Size, @Past, @Future, @CreditCardNumber, @Email, @URL, etc.)
+    
+                  @Size(min = 10, max = 500)
+                  private String message;
+                  @Past
+                  private Date birthDate;
+                  @Pattern(regexp = "[a-zA-Z0-9 ]", message="article.title.error")
+                  private String articleTitle;
+                  
+              
+ # Implementing input validation:
+  
+ # Credinital and PII information:
+ 
+       https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html
+  
+      <input type="text" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></input>
+
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            
+   # WebSocket implementation hints:
+   
+                Access filtering through the "Origin" HTTP request header
+                Input / Output validation
+                Authentication
+                Authorization
+                Access token explicit invalidation
+                Confidentiality and Integrity
+  
+  
 
 
 
