@@ -2,70 +2,67 @@
 Web Security Tools &amp; Methods
 
 
-We cannot  firewall  or  patch  our way to secure Websites. Security professionals used to think that firewalls, Secure Sockets Layer (SSL), patching, and privacy policies were enough. Today, however, these methods are outdated and ineffective, as attacks on prominent, well-protected Websites are occurring every day. Citigroup, PBS, Sega, Nintendo, Gawker, AT&T, the CIA, the US Senate, NASA, the NYSE, Zynga, and thousands of others have something in common: all of them have had Websites compromised in the last year.
+    We cannot  firewall  or  patch  our way to secure Websites. Security professionals used to think that firewalls, Secure Sockets Layer (SSL), patching, and privacy policies were enough. Today, however, these methods are outdated and ineffective, as attacks on prominent, well-protected Websites are occurring every day. Citigroup, PBS, Sega, Nintendo, Gawker, AT&T, the CIA, the US Senate, NASA, the NYSE, Zynga, and thousands of others have something in common: all of them have had Websites compromised in the last year.
 
 
-top 10 java defenses for website security
+ # Top 10 java defenses for website security:
 
-jim manico
+# owasp cheat-sheet
 
-owasp voulteer:
+# 1.query parametized;
 
-owasp cheat-sheet
+    antomy of a sql
 
-1.query parametized;
+    anatomy of a sql injection Attack;
 
-antomy of a sql
+    query parameterization in java:
 
-anatomy of a sql injection Attack;
+                string name = request.getParameter("newName");
+                string id = request.getParameter("id");
 
-query parameterization in java:
-
-string name = request.getParameter("newName");
-string id = request.getParameter("id");
-
-preparedStatement pstmr = con.preparedstatement("update employees set 
-name=? where id= ?");
-pstmt.setStringO( 1 , newName);
-pstmt.setString( 2, id);
+                preparedStatement pstmr = con.preparedstatement("update employees set 
+                name=? where id= ?");
+                pstmt.setStringO( 1 , newName);
+                pstmt.setString( 2, id);
 
 
-2. password storage:
+# 2. password storage:
 
-store password based on need:
+      store password based on need:
 
-use a  salt( de-duplication)
-SCRYPT/PBKDF2(slow, peroformance hit,easy)
-HMAC(require good key storage, tough)
+            use a  salt( de-duplication)
+            SCRYPT/PBKDF2(slow, peroformance hit,easy)
+            HMAC(require good key storage, tough)
 
 1.do not limit the type of characters or length of user password
 
 2.use a cryptographically strong credentials-sepcific salt
-    protect([salt]+[password]);
-use a 32 char or 64 char salt
-do not depend on hiding,spitting
 
-3aa) impose difficult verification on the attack(strong/fast)
+                    protect([salt]+[password]);
+                use a 32 char or 64 char salt
+                do not depend on hiding,spitting
 
- HMAC-SHA-256[(private key],[salt]+[password])
+ # 3a) impose difficult verification on the attack(strong/fast)
 
-3b) impose difficult verification on attack and defender
+                 HMAC-SHA-256[(private key],[salt]+[password])
 
-PBKDF 2 when  FIPS certification
-scrypt where resisting any/all hardware
+ # 3b) impose difficult verification on attack and defender
 
-XSS defense cross site scripting:
+                PBKDF 2 when  FIPS certification
+                scrypt where resisting any/all hardware
 
-no third party libraries
-more complete api
+                XSS defense cross site scripting:
+
+                no third party libraries
+                more complete api
 
 
 html contexts
 xml contexts	
 
-web page built in java JSP is a vulnerable to XSS:
+ # web page built in java JSP is a vulnerable to XSS:
 
-solution:
+            solution:
 
 1)
 
@@ -90,7 +87,7 @@ solution:
           </script>
 
 
-html sanitization
+ # html sanitization
 
 
  # code google owasp java html sanitization
@@ -100,7 +97,8 @@ html sanitization
     Fields
     Properties
     Classes
-@Constraints 
+
+    @Constraints 
 
     (@Pattern, @Digits, @Min, @Max, @Size, @Past, @Future, @CreditCardNumber, @Email, @URL, etc.)
     
